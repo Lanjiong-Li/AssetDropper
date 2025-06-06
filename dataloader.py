@@ -154,13 +154,13 @@ class AssetDataset(data.Dataset):
         #3 pattern
         pattern = self.toTensor(image)
         
-        #image_cv = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+        image_cv = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
         mask_cv = np.array(mask.convert("L"))
 
         #4 masked_image for IP-Adapter
-        #masked_image_cv = cv2.bitwise_and(image_cv, image_cv, mask=mask_cv)
-        #masked_image = Image.fromarray(cv2.cvtColor(masked_image_cv, cv2.COLOR_BGR2RGB)).resize((512, 512))
-        mask_img_trim = self.clip_processor(images=image, return_tensors="pt").pixel_values
+        masked_image_cv = cv2.bitwise_and(image_cv, image_cv, mask=mask_cv)
+        masked_image = Image.fromarray(cv2.cvtColor(masked_image_cv, cv2.COLOR_BGR2RGB)).resize((512, 512))
+        mask_img_trim = self.clip_processor(images=masked_image, return_tensors="pt").pixel_values
 
         #5 edgemap
         image_gray = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2GRAY)
