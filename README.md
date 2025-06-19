@@ -1,5 +1,7 @@
 # AssetDropper
 
+![teaser](assets/Teaser.pdf)
+
 ## Installation
 ```bash
 conda create -n assetdropper python=3.10 -y
@@ -32,7 +34,7 @@ Run the following command to get asset from the reference image:
 
 ```bash
 python inference.py \
-    --pretrained_model_name_or_path "<huggingface_url>" \
+    --pretrained_model_name_or_path "LLanv/AssetDropper" \
     --data_dir "./data" \
     --output_dir "./output" \
     --txt_name "example" \
@@ -44,3 +46,8 @@ python inference.py \
 - `--data_dir`：Path to the directory containing input images & masks.  
 - `--output_dir`：Path to the output directory. 
 - `--txt_name`：Name of the file that record the image name you want to process. 
+
+or simply run:
+```bash
+bash inference.sh
+```
