@@ -30,7 +30,7 @@ Put your own **image** (`.jpg` or `.png`) & corresponding **mask** (`.jpg` or `.
 
 Here is an overview of data structure:
 
-```bash
+```
 data
 ├── Caption/
 │   └── example.txt
