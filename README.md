@@ -1,4 +1,4 @@
-# AssetDropper
+# AssetDropper: Asset Extraction via Diffusion Models with Reward-Driven Optimization
 
 ![teaser](asset/Teaser.jpg)
 
