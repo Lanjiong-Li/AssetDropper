@@ -40,7 +40,7 @@ from diffusers.utils.import_utils import is_xformers_available
 from src.unet_hacked_tryon import UNet2DConditionModel
 from src.unet_hacked_garmnet import UNet2DConditionModel as UNet2DConditionModel_ref
 from src.assetdropper_pipeline import StableDiffusionXLInpaintPipeline as AssetDropperPipeline
-
+from huggingface_hub import snapshot_download
 from dataloader import AssetDataset
 
 logger = get_logger(__name__, log_level="INFO")
@@ -95,20 +95,29 @@ def main():
     weight_dtype = torch.float16
 
     # Load scheduler, tokenizer and models.
-    noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder="scheduler")
+    noise_scheduler = DDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder="checkpoint-37500/scheduler")
     
     vae = AutoencoderKL.from_pretrained(
         args.pretrained_model_name_or_path,
-        subfolder="vae",
+        subfolder="checkpoint-37500/vae",
         torch_dtype=torch.float16,
     )
-    unet = UNet2DConditionModel.from_pretrained(
-        f"{args.pretrained_model_name_or_path}/unet",
-        low_cpu_mem_usage=True, 
+
+    unet_dir = snapshot_download(
+        repo_id="Vicovo/AssetDropper",
+        repo_type="model",
+        allow_patterns=["checkpoint-37500/unet/*"],
     )
+    unet_path = os.path.join(unet_dir, "checkpoint-37500/unet")
+    unet = UNet2DConditionModel.from_pretrained(
+        pretrained_model_name_or_path=unet_path,
+        use_safetensors=True,
+        low_cpu_mem_usage=True
+    )
+
     image_encoder = CLIPVisionModelWithProjection.from_pretrained(
         args.pretrained_model_name_or_path,
-        subfolder="image_encoder",
+        subfolder="checkpoint-37500/image_encoder",
         torch_dtype=torch.float16,
     )
     unet_encoder = UNet2DConditionModel_ref.from_pretrained(
@@ -120,23 +129,23 @@ def main():
 
     text_encoder_one = CLIPTextModel.from_pretrained(
         args.pretrained_model_name_or_path,
-        subfolder="text_encoder",
+        subfolder="checkpoint-37500/text_encoder",
         torch_dtype=torch.float16,
     )
     text_encoder_two = CLIPTextModelWithProjection.from_pretrained(
         args.pretrained_model_name_or_path,
-        subfolder="text_encoder_2",
+        subfolder="checkpoint-37500/text_encoder_2",
         torch_dtype=torch.float16,
     )
     tokenizer_one = AutoTokenizer.from_pretrained(
         args.pretrained_model_name_or_path,
-        subfolder="tokenizer",
+        subfolder="checkpoint-37500/tokenizer",
         revision=None,
         use_fast=False,
     )
     tokenizer_two = AutoTokenizer.from_pretrained(
         args.pretrained_model_name_or_path,
-        subfolder="tokenizer_2",
+        subfolder="checkpoint-37500/tokenizer_2",
         revision=None,
         use_fast=False,
     )
