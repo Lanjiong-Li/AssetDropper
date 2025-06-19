@@ -28,7 +28,7 @@ pip install -r requirements.txt
 To help you get started with your own images, you should follow this simple data structure: 
 Put your own **image** (`.jpg` or `.png`) & corresponding **mask** (`.jpg` or `.png`) & **caption** in the subdirectory of data.
 
-here is an overview of data structure:
+Here is an overview of data structure:
 
 ```bash
 data
@@ -58,9 +58,9 @@ python inference.py \
 - `--pretrained_model_name_or_path`：Path to the pre-trained AssetDropper model checkpoint.  
 - `--data_dir`：Path to the directory containing input images & masks.  
 - `--output_dir`：Path to the output directory. 
-- `--txt_name`：Name of the file that record the image name you want to process. 
+- `--txt_name`：Name of the file that records the image name you want to process. 
 
-or simply run:
+Or simply run:
 ```bash
 bash inference.sh
 ```
