@@ -2,8 +2,6 @@
 
 ![teaser](asset/Teaser.jpg)
 
-### [Project Page](https://assetdropper.github.io/) | [Arxiv](https://arxiv.org/abs/2506.07738) | [Models](https://huggingface.co/LLanv/AssetDropper)
-
 ![Version](https://img.shields.io/badge/version-1.0.0-blue) &nbsp;
  <a href='https://arxiv.org/abs/2506.07738'><img src='https://img.shields.io/badge/arXiv-2506.07738-b31b1b.svg'></a> &nbsp;
  <a href='https://assetdropper.github.io/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
