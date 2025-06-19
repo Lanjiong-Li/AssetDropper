@@ -63,7 +63,7 @@ bash inference.sh
 ```
 
 ## Citation
-
+If you find this work useful for your research, please consider citing:
 ```
 @article{li2025assetdropper,
   title={AssetDropper: Asset Extraction via Diffusion Models with Reward-Driven Optimization},
