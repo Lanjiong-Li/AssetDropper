@@ -35,9 +35,6 @@ requests==2.32.3
 safetensors==0.5.3
 sympy==1.13.3
 tokenizers==0.15.2
-torch==2.4.1+cu118
-torchaudio==2.4.1+cu118
-torchvision==0.19.1+cu118
 tqdm==4.67.1
 transformers==4.36.2
 triton==3.0.0

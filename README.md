@@ -10,8 +10,13 @@ git clone https://github.com/Lanjiong-Li/AssetDropper.git
 cd AssetDropper
 
 conda create -n assetdropper python=3.10 -y
-pip install -r requirements.txt
 conda activate assetdropper
+
+# Install torch, torchvision based on your machine configuration
+pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu118
+
+# Install other dependencies
+pip install -r requirements.txt
 ```
 
 ## Usage
