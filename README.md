@@ -53,3 +53,14 @@ or simply run:
 ```bash
 bash inference.sh
 ```
+
+## Citation
+
+```
+@article{li2025assetdropper,
+  title={AssetDropper: Asset Extraction via Diffusion Models with Reward-Driven Optimization},
+  author={Li, Lanjiong and Zhao, Guanhua and Zhu, Lingting and Cai, Zeyu and Yu, Lequan and Zhang, Jian and Wang, Zeyu},
+  journal={arXiv preprint arXiv:2506.07738},
+  year={2025}
+}
+```
