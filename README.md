@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 ### Prepare Input
 To help you get started with your own images, you should follow this simple data structure: 
-Put your own **image** (`.jpg` or `.png`) & corresponding **mask** (`.jpg` or `.png`) & **caption** in the subdirectory of data
+Put your own **image** (`.jpg` or `.png`) & corresponding **mask** (`.jpg` or `.png`) & **caption** in the subdirectory of data.
 
 here is an overview of data structure:
 
