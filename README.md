@@ -1,6 +1,6 @@
 # AssetDropper
 
-![teaser](asset/Teaser.pdf)
+![teaser](asset/Teaser.jpg)
 
 ## Installation
 ```bash
