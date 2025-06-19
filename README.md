@@ -2,6 +2,8 @@
 
 ![teaser](asset/Teaser.jpg)
 
+### [Project Page](https://assetdropper.github.io/) | [Arxiv](https://arxiv.org/abs/2506.07738) | [Models](https://huggingface.co/LLanv/AssetDropper)
+
 ## Installation
 ```bash
 conda create -n assetdropper python=3.10 -y
