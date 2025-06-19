@@ -6,6 +6,9 @@
 
 ## Installation
 ```bash
+git clone https://github.com/Lanjiong-Li/AssetDropper.git
+cd AssetDropper
+
 conda create -n assetdropper python=3.10 -y
 pip install -r requirements.txt
 conda activate assetdropper
