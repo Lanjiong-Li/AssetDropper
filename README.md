@@ -65,6 +65,11 @@ or simply run:
 bash inference.sh
 ```
 
+# ToDo List
+- [x] Inference code
+- [ ] Gradio & Hugging Face demo (Coming Soon)
+- [ ] Dataset (Coming Soon)
+
 ## Citation
 If you find this work useful for your research, please consider citing:
 ```
