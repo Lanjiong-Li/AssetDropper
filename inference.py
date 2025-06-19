@@ -104,7 +104,7 @@ def main():
     )
 
     unet_dir = snapshot_download(
-        repo_id="Vicovo/AssetDropper",
+        repo_id="LLanv/AssetDropper",
         repo_type="model",
         allow_patterns=["checkpoint-37500/unet/*"],
     )
